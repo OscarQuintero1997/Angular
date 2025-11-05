@@ -1,9 +1,10 @@
-import {Component, signal } from "@angular/core";
+import { UpperCasePipe } from "@angular/common";
+import {Component, computed, signal } from "@angular/core";
 
 
 @Component ({
-
-  templateUrl: './hero-page.component.html'
+  templateUrl: './hero-page.component.html',
+  imports: [UpperCasePipe]
 })
 
 
@@ -12,9 +13,10 @@ export class HeroPageComponent {
   name = signal ('Ironman');
   age = signal (45);
 
-  getHeroDescription() {
-    return `El señor ${ this.name() } tiene ${ this.age() } años de edad.`;
-  }
+
+  heroDescription = computed(() =>{
+    return `${this.name() } -- ${this.age()}`;
+  })
 
   changeHero () {
     this.name.set ('Spiderman');

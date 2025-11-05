@@ -24,6 +24,12 @@ export const routes: Routes = [
 {
   path: 'student',
   component: StudentPageComponent,
-}
+},
+
+{
+  path: '**',
+  redirectTo: "",
+},
+
 
 ];
