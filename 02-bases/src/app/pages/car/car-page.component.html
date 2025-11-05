@@ -1,0 +1,65 @@
+<h1>hola</h1>
+
+
+
+<div class="container mt-4">
+  <h1 class="text-center mb-4">🚗 Página del Auto</h1>
+
+  <div class="card p-4 shadow-sm">
+    <h3>{{ brand() }} - {{ model() }}</h3>
+
+    <dl class="row mt-3">
+      <dt class="col-sm-3">Marca:</dt>
+      <dd class="col-sm-9">{{ brand() }}</dd>
+
+      <dt class="col-sm-3">Modelo:</dt>
+      <dd class="col-sm-9">{{ model() }}</dd>
+
+      <dt class="col-sm-3">Año:</dt>
+      <dd class="col-sm-9">{{ year() }}</dd>
+
+      <dt class="col-sm-3">Color:</dt>
+      <dd class="col-sm-9">{{ color() }}</dd>
+
+      <dt class="col-sm-3">Descripción:</dt>
+      <dd class="col-sm-9">{{ getCarDescription() }}</dd>
+
+      <dt class="col-sm-3">Marca en mayúsculas:</dt>
+      <dd class="col-sm-9">{{ brand().toUpperCase() }}</dd>
+
+      <dt class="col-sm-3">Resumen:</dt>
+      <dd class="col-sm-9">
+        <strong>{{ carSummary() }}</strong>
+      </dd>
+    </dl>
+
+    <div class="mt-4">
+      <button (click)="changeCar()" class="btn btn-primary mx-2">
+        Cambiar auto
+      </button>
+
+      <button (click)="updateYear()" class="btn btn-success mx-2">
+        Cambiar año
+      </button>
+
+      <button (click)="changeColor()" class="btn btn-warning mx-2">
+        Cambiar color
+      </button>
+
+      <button (click)="resetCar()" class="btn btn-danger mx-2">
+        Resetear
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <label for="modelInput" class="form-label">Cambiar modelo manualmente:</label>
+      <input
+        id="modelInput"
+        type="text"
+        class="form-control w-50"
+        placeholder="Escribe el modelo..."
+        (input)="model.set($any($event.target).value)"
+      />
+    </div>
+  </div>
+</div>

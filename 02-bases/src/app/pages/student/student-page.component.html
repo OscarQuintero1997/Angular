@@ -1,0 +1,44 @@
+<h1>{{ studentName() }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ studentName() }}</dd>
+
+  <td>Nota:</td>
+  <dd>{{ grade() }}</dd>
+
+  <td>Materia:</td>
+  <dd>{{ subject() }}</dd>
+
+  <td>Método:</td>
+  <dd>{{ getStudentDescription() }}</dd>
+
+  <td>Mayúsculas:</td>
+  <dd>{{ studentName().toUpperCase() }}</dd>
+
+  <td>Resumen (computed):</td>
+  <dd>{{ studentSummary() }}</dd>
+</dl>
+
+<button (click)="changeStudent()" class="btn btn-primary mx-2">
+  Cambiar estudiante
+</button>
+
+<button (click)="changeSubject()" class="btn btn-warning mx-2">
+  Cambiar materia
+</button>
+
+<button (click)="resetForm()" class="btn btn-danger mx-2">
+  Reset
+</button>
+
+<div class="mt-4">
+  <label for="inputName" class="form-label">Cambiar nombre:</label>
+  <input
+    id="inputName"
+    type="text"
+    class="form-control w-50"
+    placeholder="Escribe el nombre del estudiante"
+    (input)="studentName.set($any($event.target).value)"
+  />
+</div>
