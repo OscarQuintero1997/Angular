@@ -1,12 +1,8 @@
 
 import { Component, computed, signal } from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list';
+import type { Character } from '../../interfaces/character.interface';
 
-interface Character {
-  id: number;
-  name: string;
-  power: number;
-}
 
 @Component({
   selector: 'dragonball-super',
