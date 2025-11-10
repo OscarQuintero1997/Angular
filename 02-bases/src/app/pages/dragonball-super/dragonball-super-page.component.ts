@@ -2,7 +2,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list';
 import type { Character } from '../../interfaces/character.interface';
-import { CharaAddComponent } from "../../components/dragonball/character-list/character-add.component";
+import { CharaAddComponent } from "../../components/dragonball/character-add/character-add.component";
 
 
 @Component({
