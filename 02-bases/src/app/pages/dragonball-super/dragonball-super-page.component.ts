@@ -2,12 +2,13 @@
 import { Component, computed, signal } from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list';
 import type { Character } from '../../interfaces/character.interface';
+import { CharaAddComponent } from "../../components/dragonball/character-list/character-add.component";
 
 
 @Component({
   selector: 'dragonball-super',
   templateUrl: './dragonball-super-page.component.html',
-  imports: [CharacterListComponent],
+  imports: [CharacterListComponent, CharaAddComponent],
 })
 
 export class dragonBallSuperPageComponent {
@@ -25,11 +26,14 @@ export class dragonBallSuperPageComponent {
   }
 
   const newCharacter:Character = {
-    id: this.characters().length + 1,
+    // id: this.characters().length + 1,
+    id: 1000,
     name: this.name(),
     power: this.power()
   };
-  this.characters.update(list => [...list, newCharacter]);
+  // this.characters.update(list => [...list, newCharacter]);
+  console.log(newCharacter);
+
   this.resetFils();
 }
 
