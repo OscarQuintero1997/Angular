@@ -1,4 +1,3 @@
-
 <h1>{{ name() }}</h1>
 
 <dl>
@@ -12,16 +11,14 @@
   <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <!-- ! Intentar  -->
-  <!-- <dd> {{ capitalizedName() }} </dd> -->
-  <dd> {{ name() | uppercase }} </dd>
-
+  <!-- <dd>{{ capitalizedName() }}</dd> -->
+  <dd>{{ name() | uppercase }}</dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">
-  Cambiar Nombre
+  Cambiar nombre
 </button>
 
-<button (click)="chageAge()" class="btn btn-primary">Cambiar edad</button>
+<button (click)="changeAge()" class="btn btn-primary">Cambiar edad</button>
 
 <button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>

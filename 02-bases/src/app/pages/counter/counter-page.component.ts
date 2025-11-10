@@ -1,37 +1,29 @@
-import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-counter-page',
   templateUrl: './counter-page.component.html',
-  styleUrl: './counter-page.component.css',
-
-
+  styles: `
+    button {
+      padding: 5px;
+      margin: 5px 10px;
+      width: 75px;
+    }
+  `,
 })
-
-export class CounterPageComponent{
+export class CounterPageComponent {
   counter = 10;
   counterSignal = signal(10);
 
-  constructor () {}
+  constructor() {}
 
-  increaseBy(value:  number) {
-    this.counter += value
+  increaseBy(value: number) {
+    this.counter += value;
     // this.counterSignal.set(this.counterSignal() + value);
-    this.counterSignal.update(current => current + value);
-  };
-  resetCounter () {
+    this.counterSignal.update((current) => current + value);
+  }
+
+  resetCounter() {
     this.counter = 0;
     this.counterSignal.set(0);
-
   }
 }
-
-
-
-
-
-
-
-
-
-
