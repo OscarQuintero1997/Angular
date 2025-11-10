@@ -5,14 +5,14 @@
   <div class="col-12 col-sm-6">
 
     <dragonball-character-add
-    (newCharacter)="AddCharacter ($event)"/>
+    (newCharacter)="dragonballService.AddCharacter($event)"/>
 
   </div>
 
   <div class="col-12 col-sm-6">
     <dragonball-character-list
       listName="Listado de Personajes"
-    [characters]="characters()" />
-    <!-- <dragonball-character-list [characters]="characters" /> -->
+    [characters]="dragonballService.characters()" />
+    <!-- <dragonball-character-list [charac ters]="characters" /> -->
   </div>
 </section>
