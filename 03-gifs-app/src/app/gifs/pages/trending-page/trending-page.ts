@@ -21,4 +21,6 @@ const imageUrls: string[] = [
   imports: [GifList],
   templateUrl: './trending-page.html',
 })
-export default class trendingPage { }
+export default class trendingPage {
+  gifs = imageUrls;
+}
