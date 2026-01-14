@@ -3,11 +3,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "",
     "paths": {
-      "@environments/*": ["src/environments/*"]
+      "@environmets/*" : ["src/environmets/*"]
     },
-
 
     "strict": true,
     "noImplicitOverride": true,
